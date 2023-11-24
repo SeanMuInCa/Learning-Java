@@ -23,8 +23,6 @@ public abstract class GeoSomethingObject
     {
         this.color = color;
     }
-    public int getArea(){
-        return side * side;
-    }
+    public abstract int getArea();
 
 }

@@ -2,9 +2,22 @@ package COSC601.Class1121;
 
 public class Square extends GeoSomethingObject
 {
-    private int side = 10;
+
+    private int side;
+
+    public int getSide()
+    {
+        return side;
+    }
+
+    public void setSide(int side)
+    {
+        this.side = side;
+    }
+
     public Square()
     {
+        setSide(10);
     }
     public Square(String color)
     {
@@ -15,16 +28,16 @@ public class Square extends GeoSomethingObject
     @Override
     public int getArea()
     {
-        return side * side;
+        return getSide() * getSide();
     }
-}
-class Test{
-    public static void main(String[] args)
+
+    @Override
+    public String toString()
     {
-        Square s = new Square("red");
-        Rectangle r = new Rectangle(10,5);
-        System.out.println(r.getArea());
-        System.out.println(s.getArea());
-        System.out.println(s.getColor());
+        return "Square{" +
+                "side=" + side +
+                ", color='" + color + '\'' +
+                '}';
     }
 }
+
