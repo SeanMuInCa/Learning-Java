@@ -74,8 +74,9 @@ public class Student implements Comparable<Student>, Cloneable
     {
         try
         {
-            Student clone = (Student) super.clone();
             // TODO: copy mutable state here, so the clone can't change the internals of the original
+            Student clone = (Student) super.clone();
+            clone.hobbys = this.hobbys.clone();
             return clone;
         } catch (CloneNotSupportedException e)
         {
