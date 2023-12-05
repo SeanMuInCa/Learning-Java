@@ -1,6 +1,8 @@
 package COSC601.Class1130.Practice;
 
-public abstract class Person
+import COSC601.Class1128.Edible;
+
+public abstract class Person implements Enrollable, Printable
 {
     String firstName;
     String lastName;
@@ -68,4 +70,5 @@ public abstract class Person
                 ", lastName='" + lastName + '\'' +
                 '}';
     }
+
 }

@@ -8,9 +8,10 @@ public class Faculty extends Person implements Comparable<Faculty>
     String department;
     String[] courses;
 
-    public Faculty(String lastName, String department)
+    public Faculty(String lastName, String employeeNum, String department)
     {
         super(lastName);
+        this.employeeNum = employeeNum;
         this.department = department;
     }
 
@@ -36,5 +37,18 @@ public class Faculty extends Person implements Comparable<Faculty>
     public int compareTo(Faculty o)
     {
         return this.employeeNum.compareTo(o.employeeNum);
+    }
+
+    @Override
+    public boolean enrol()
+    {
+        System.out.println("you are enrolled in " + this.department + " " + this.lastName);
+        return false;
+    }
+
+    @Override
+    public void print()
+    {
+        System.out.println("you can print " + this.getLastName());
     }
 }
