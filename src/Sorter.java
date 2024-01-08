@@ -25,7 +25,8 @@ public class Sorter
 
     public static void mergeSort(int[] arr)
     {
-        //base case
+        mergeSort(arr,0,arr.length - 1);
+        /*//base case
         if(arr.length <= 1) return;
 
         int mid = arr.length / 2;
@@ -39,12 +40,22 @@ public class Sorter
         mergeSort(leftPart);
         mergeSort(rightPart);
 
-        merge(arr, leftPart, rightPart);
+        merge(arr, leftPart, rightPart);*/
+    }
+
+    private static void mergeSort(int[] arr, int low, int high)
+    {
+        if(high - low <= 0) return;
+        int mid = (low + high) / 2;
+        mergeSort(arr,low,mid);
+        mergeSort(arr,mid + 1, high);
+        mergeE(arr,low,mid,high);
     }
 
     public static void merge(int[] arr, int[] leftPart, int[] rightPart)
     {
-        for (int i = 0, j = 0,k=0; (i < leftPart.length && j < rightPart.length); )
+        int i = 0, j = 0,k=0;
+        for (; (i < leftPart.length && j < rightPart.length); )
         {
             if(leftPart[i] < rightPart[j]){
                 arr[k] = leftPart[i];
