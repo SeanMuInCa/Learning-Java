@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 /**
  * Purpose:            To implement some useful methods of array <br />
  * Data Submitted:      10/31/2023 <br />
@@ -418,7 +416,7 @@ public class ArrayUtils
             int currentMin = arr[i];
             int currentMinIndex = i;
 
-            for (int j = i + 1; j < arr.length; j++)//这里只是找最小值，没有操作数组
+            for (int j = i + 1; j < arr.length; j++)
             {
                 if (currentMin > arr[j])
                 {
@@ -427,7 +425,6 @@ public class ArrayUtils
                 }
             }
 
-            //  这里操作数组
             if (currentMinIndex != i)
             {
                 arr[currentMinIndex] = arr[i];
