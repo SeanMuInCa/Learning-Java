@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Main
 {
     public static void main(String[] args)
@@ -26,8 +28,12 @@ public class Main
         System.out.println("Number of elements above the average is " + count);*/
 
         int[] arr = {2, 3, 1, 1, 12, 2, 3, 123, 112, 12, 21, 23};
-        Sorter.recSelectionSort(arr);
+        int[] arr1 = new Random().ints(10000,1,1000).toArray();
+//        long start = System.nanoTime();
+        Sorter.mergeSort(arr);
+//        long end = System.nanoTime();
         printArray(arr);
+//        System.out.println("it tooks " + (end - start)  + " nano seconds");
     }
 
     private static void printArray(int[] arr)
@@ -35,7 +41,7 @@ public class Main
         for (int i = 0; i < arr.length; i++)
         {
             System.out.print(arr[i] + " ");
-            if ((i + 1) % 5 == 0) System.out.println();
+            if ((i + 1) % 40 == 0) System.out.println();
         }
     }
 }
