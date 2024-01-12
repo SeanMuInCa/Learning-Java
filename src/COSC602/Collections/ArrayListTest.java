@@ -1,6 +1,7 @@
 package COSC602.Collections;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ArrayListTest
 {
@@ -36,5 +37,12 @@ public class ArrayListTest
 
         System.out.println("Contains Tom? " + names.contains( "Tom") );
         System.out.println("Size? " + names.size() );
+
+        names.forEach(System.out::println);
+
+        Iterator<String> it = names.iterator();
+        while (it.hasNext()){
+            System.out.println(it.next());
+        }
     }
 }
