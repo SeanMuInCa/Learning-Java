@@ -37,17 +37,17 @@ public class CollectionsPractice
             System.out.print(s + " ");
         }
         System.out.println();
-        System.out.println("Max: "+Collections.max(myCollection));
-        System.out.println("Min: "+Collections.min(myCollection));
+        System.out.println("Max: "+ Collections.max(myCollection));
+        System.out.println("Min: "+ Collections.min(myCollection));
         System.out.println("---------------------------------");
         LengthComparator com = new LengthComparator();
-        Collections.sort(myCollection, com);
+        myCollection.sort(com);
         for (String s : myCollection){
             System.out.print(s + " ");
         }
         System.out.println();
-        System.out.println("Max: "+Collections.max(myCollection));
-        System.out.println("Min: "+Collections.min(myCollection));
+        System.out.println("Max: "+ Collections.max(myCollection, com));
+        System.out.println("Min: "+ Collections.min(myCollection, com));
     }
 
 }
