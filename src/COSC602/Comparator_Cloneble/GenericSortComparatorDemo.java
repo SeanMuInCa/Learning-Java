@@ -1,7 +1,9 @@
 package COSC602.Comparator_Cloneble;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Iterator;
 
 public class GenericSortComparatorDemo
 {
@@ -32,5 +34,17 @@ public class GenericSortComparatorDemo
         String[] list = {"Java", "C", "C#", "C++", "JavaScript"};
         bubbleSort(list, (s1,s2) -> - (s1.length() - s2.length()));
         Arrays.stream(list).toList().forEach(System.out::println);
+        System.out.println("@@@@@@@@@@@@@@@@@@");
+        ArrayList<String> container = new ArrayList<>(Arrays.asList(list));
+        for (String s : container)
+        {
+            System.out.print(s + " ");
+        }
+        Iterator<String> it = container.iterator();
+        while (it.hasNext())
+        {
+            System.out.print(it.next() + " ");
+        }
+        container.forEach(str -> System.out.println(str + " "));
     }
 }
