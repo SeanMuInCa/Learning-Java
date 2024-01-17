@@ -50,4 +50,14 @@ public class Student implements Cloneable
         }
         return copy;
     }
+
+    @Override
+    public String toString()
+    {
+        return "Student{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
+    }
 }
