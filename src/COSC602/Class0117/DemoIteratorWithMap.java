@@ -53,14 +53,17 @@ public class DemoIteratorWithMap
             elementValue.displayStudent();
 
         }
-        
+
         System.out.println("-----------------------");
         for (Map.Entry<Integer,Student> m : setList){
             System.out.println(m.getKey());
             System.out.println(m.getValue());
         }
+        System.out.println("-----------------------");
 
-
+        setList.forEach((pair) -> System.out.println(pair.getKey() + " --- " + pair.getValue()));
+        System.out.println("-----------------------");
+        studentList.forEach((k,v) -> System.out.println(k + " ---- " + v));
     }
 
 }
