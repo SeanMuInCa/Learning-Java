@@ -18,7 +18,7 @@ public class DemoFileIO
             while (input.hasNext())
             {
                 String str = input.nextLine();
-                sb.append("\r\n").append(str.replaceAll("a", "b"));
+                sb.append(str.replaceAll("a", "b")).append("\r\n");
             }
             System.out.println(sb);
         } catch (FileNotFoundException e)
