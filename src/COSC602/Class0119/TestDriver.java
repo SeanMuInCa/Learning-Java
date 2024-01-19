@@ -5,9 +5,17 @@ public class TestDriver
     public static void main( String[] args )
     {
         Employee emp = new Employee();
-//        emp.setAge(-1);
-//        emp.setPay(-1);
-        emp.setHoursWorked(-1);
+        try
+        {
+            emp.setAge(2);
+            emp.setPay(13);
+            emp.setHoursWorked(2000);
+            emp.setFirstName("abc");
+        } catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+
         System.out.println(emp);
     }
 }

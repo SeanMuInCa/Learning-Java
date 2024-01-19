@@ -25,7 +25,7 @@ public class Manager extends Employee
      * @param salary The manager's yearly salary
      */
     public Manager( String fName, String lName, int age, int sin,
-                    double salary )
+                    double salary ) throws Exception
     {
         // have the super class deal with fName, lName, age, sin, salary
         super( fName, lName, age, sin, 0, salary);

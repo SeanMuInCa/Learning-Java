@@ -29,7 +29,7 @@ public class Employee extends Person
      * @param pay Pay information.
      */
     public Employee( String fName, String lName, int age,
-                     int sin, int hoursWorked, double pay )
+                     int sin, int hoursWorked, double pay ) throws Exception
     {
         // set values in Person class
         super( fName, lName, age, sin );
@@ -49,8 +49,8 @@ public class Employee extends Person
 
     public void setPay(double pay)
     {
-        if(pay < 0)
-            throw new IllegalArgumentException("pay can not be negative");
+        if(pay < 14)
+            throw new IllegalArgumentException("pay can not less than 14 per hour");
         this.pay = pay;
     }
 
@@ -59,5 +59,14 @@ public class Employee extends Person
         if(hoursWorked < 0)
             throw new IllegalArgumentException("hoursWorked can not be negative");
         this.hoursWorked = hoursWorked;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Employee{" +
+                "pay=" + pay +
+                ", hoursWorked=" + hoursWorked +
+                '}' + super.toString();
     }
 }

@@ -26,7 +26,7 @@ public class Person
      * @param sin   The person's social insurance number
      */
     public Person( String fName, String lName, int age,
-                   int sin)
+                   int sin) throws Exception
     {
         firstName = fName;
         lastName = lName;
@@ -39,10 +39,10 @@ public class Person
 
     // get and set methods for each attribute could be here too...
 
-    public void setAge(int age)
+    public void setAge(int age) throws Exception
     {
         if(age < 0)
-            throw new IllegalArgumentException("age must be greater than 0");
+            throw new Exception("age must be greater than 0");
         this.age = age;
     }
 
@@ -79,5 +79,16 @@ public class Person
     public void setSin(int sin)
     {
         this.sin = sin;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", sin=" + sin +
+                '}';
     }
 }

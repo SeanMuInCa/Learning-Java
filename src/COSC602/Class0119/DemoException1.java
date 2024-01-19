@@ -14,15 +14,27 @@ public class DemoException1
                 + "Enter a number from 0 through "
                 + ( words.length - 1 ) + ": " );
         String line = input.next();
-        int index = Integer.parseInt( line.trim() );
-        if ( index >= 0 && index < words.length )
+        try
         {
-            System.out.println( "The word is: " + words[index] );
-        }
-        else
+            int index = Integer.parseInt( line.trim() );
+            if ( index >= 0 && index < words.length )
+            {
+                System.out.println( "The word is: " + words[index] );
+            }
+            else
+            {
+                System.out.println( "Sorry, " + index
+                        + " is not a valid number." );
+            }
+        } catch (NumberFormatException e)
         {
-            System.out.println( "Sorry, " + index
+//            e.printStackTrace();
+            System.out.println( "Sorry, " + line
                     + " is not a valid number." );
+        }finally
+        {
+            System.out.println("keep practicing");
         }
+
     }
 }
