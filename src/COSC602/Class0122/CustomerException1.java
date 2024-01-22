@@ -29,11 +29,16 @@ public class CustomerException1
         boolean keepGoing = true;
         while ( keepGoing )
         {
+            displayResult();
+            System.out.println( PROMPT );
+            String line = input.nextLine();
+            if(!line.contains(" ") || !(line.charAt(0) < 9) || !line.endsWith(String.valueOf(ADD_OP)) || !line.endsWith(String.valueOf(SUB_OP)) || !line.endsWith(String.valueOf(MUL_OP)) || !line.endsWith(String.valueOf(DIV_OP)))
+            {
+                System.out.println("error");
+            }
             try
             {
-                displayResult();
-                System.out.println( PROMPT );
-                String line = input.nextLine();
+
                 keepGoing = processLine( line );
             }catch (IllegalOperatorException e)
             {
