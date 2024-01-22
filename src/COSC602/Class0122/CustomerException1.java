@@ -23,7 +23,7 @@ public class CustomerException1
         result = 0.0;
     }
 
-    public void processKeyboardInput()
+    public void processKeyboardInput() throws IllegalArgumentException
     {
         Scanner input = new Scanner( System.in );
         boolean keepGoing = true;
@@ -32,9 +32,10 @@ public class CustomerException1
             displayResult();
             System.out.println( PROMPT );
             String line = input.nextLine();
-            if(!line.contains(" ") || !(line.charAt(0) < 9) || !line.endsWith(String.valueOf(ADD_OP)) || !line.endsWith(String.valueOf(SUB_OP)) || !line.endsWith(String.valueOf(MUL_OP)) || !line.endsWith(String.valueOf(DIV_OP)))
+            int index = line.indexOf(' ');
+            if(index != line.length() - 2 || !(line.charAt(0) < 9) || !line.endsWith(String.valueOf(ADD_OP)) || !line.endsWith(String.valueOf(SUB_OP)) || !line.endsWith(String.valueOf(MUL_OP)) || !line.endsWith(String.valueOf(DIV_OP)))
             {
-                System.out.println("error");
+                throw new IllegalArgumentException("wrong argument");
             }
             try
             {
@@ -116,6 +117,12 @@ public class CustomerException1
     public static void main( String[] args )
     {
         CustomerException1 calc = new CustomerException1();
-        calc.processKeyboardInput();
+        try
+        {
+            calc.processKeyboardInput();
+        }catch (IllegalArgumentException e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
 }
