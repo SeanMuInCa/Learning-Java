@@ -1,0 +1,25 @@
+TDD?
+test driven development
+
+TDD involve? 
+writing tests for methods beofre writing any code for the methods
+
+Benefits of TDD?
+reduces defects in code; 
+helps the code design;
+shortens implementation time;
+provides good code coverage.
+
+what is the 3-stage phrase describing TDD?
+red/green/refactor
+
+what does red/green/refactor means?
+fail - red
+pass - green
+review code and look for improvements - refactor
+
+what is the add-on used to test Java classes?
+Junit
+
+what name do we usually give test classes?
+"ClassName"Test
