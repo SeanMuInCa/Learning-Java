@@ -28,6 +28,7 @@ class PrintChar implements Runnable
         {
             System.out.print(charToPrint);
         }
+        System.out.print(" i am finished " + charToPrint + " ");
     }
 }
 
@@ -47,5 +48,6 @@ class PrintNum implements Runnable
         {
             System.out.print(" " + i);
         }
+        System.out.print(" i am finished " + lastNum + " ");
     }
 }
