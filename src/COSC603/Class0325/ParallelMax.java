@@ -12,7 +12,7 @@ public class ParallelMax
 
         for (int i = 0; i < N; i++)
         {
-            list[i] = i;
+            list[i] = (int)(Math.random() * Integer.MAX_VALUE);
         }
 
 
@@ -38,7 +38,7 @@ public class ParallelMax
 
     private static class MaxTask extends RecursiveTask<Integer>
     {
-        private final static int THRESHOLD = 1000;
+        private final static int THRESHOLD = 100000;
         private final int[] list;
         private final int low;
         private final int high;
@@ -55,6 +55,7 @@ public class ParallelMax
         {
             if (high - low < THRESHOLD)
             {
+                System.out.println("non-parallel");
                 int max = list[low];
                 for (int i = low; i < high; i++)
                 {
