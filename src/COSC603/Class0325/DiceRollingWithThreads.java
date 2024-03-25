@@ -66,8 +66,8 @@ public class DiceRollingWithThreads
     }
     class CountRunnerThread implements Runnable
     {
-        private int diceCount;
-        private int targetTotal;
+        private final int diceCount;
+        private final int targetTotal;
         public CountRunnerThread(int diceCount, int targetTotal){
             this.diceCount = diceCount;
             this.targetTotal = targetTotal;
